@@ -1335,9 +1335,11 @@ class ActionExecutionPauseCommand(ActionRunCommandMixin, ActionExecutionReadComm
             resource.get_plural_display_name().lower(),
             *args, **kwargs)
 
-        self.parser.add_argument('id', nargs='+',
-                                 metavar='id',
-                                 help='ID of action execution to pause.')
+        self.parser.add_argument(
+            'id',
+            metavar='id',
+            help='ID of %s to pause.' % resource.get_display_name().lower()
+        )
 
         self._add_common_options()
 
@@ -1369,9 +1371,11 @@ class ActionExecutionResumeCommand(ActionRunCommandMixin, ActionExecutionReadCom
             resource.get_plural_display_name().lower(),
             *args, **kwargs)
 
-        self.parser.add_argument('id', nargs='+',
-                                 metavar='id',
-                                 help='ID of action execution to resume.')
+        self.parser.add_argument(
+            'id',
+            metavar='id',
+            help='ID of %s to resume.' % resource.get_display_name().lower()
+        )
 
         self._add_common_options()
 
