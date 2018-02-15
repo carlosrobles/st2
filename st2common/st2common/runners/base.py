@@ -32,6 +32,7 @@ from st2common.util.deprecation import deprecated
 __all__ = [
     'ActionRunner',
     'AsyncActionRunner',
+    'PollingAsyncActionRunner',
     'ShellRunnerMixin',
     'get_runner',
     'get_metadata'
@@ -220,6 +221,11 @@ class ActionRunner(object):
 
 @six.add_metaclass(abc.ABCMeta)
 class AsyncActionRunner(ActionRunner):
+    pass
+
+
+@six.add_metaclass(abc.ABCMeta)
+class PollingAsyncActionRunner(AsyncActionRunner):
     pass
 
 
